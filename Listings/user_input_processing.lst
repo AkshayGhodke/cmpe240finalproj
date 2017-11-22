@@ -1,0 +1,178 @@
+C51 COMPILER V9.56.0.0   USER_INPUT_PROCESSING                                             11/07/2017 18:35:10 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE USER_INPUT_PROCESSING
+OBJECT MODULE PLACED IN .\Objects\user_input_processing.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\Google Drive\CMPE 240\Provided modules\user_input_processing.c LAR
+                    -GE OPTIMIZE(8,SPEED) BROWSE MDU_F120 DEBUG OBJECTEXTEND PRINT(.\Listings\user_input_processing.lst) TABS(2) OBJECT(.\Obj
+                    -ects\user_input_processing.obj)
+
+line level    source
+
+   1          // ******************************************************************************************************
+   2          // File Name: ScanInputs.c
+   3          // Version Date: 02/12/2014 
+   4          // Description: This file contains functions that will process the user inputs from the touch screen
+   5          // ******************************************************************************************************
+   6          #include <main.h>
+   7          
+   8          //-------------------------------------------------------------------------------------------------------
+   9          // Function Name: scanUserInput
+  10          // Return Value: None 
+  11          // Parmeters: None
+  12          // Function Description: This function processes commands from the touch screen
+  13          //-------------------------------------------------------------------------------------------------------
+  14          void scanUserInput(void)
+  15          { 
+  16   1        char str[SPRINTF_SIZE];
+  17   1        int i = 0;
+  18   1      
+  19   1        if(screen == MAIN_PAGE)                               // Main screen
+  20   1        {    
+  21   2          if(userCommand[0] == '(')                           // Check for an actual command followed by this '(' character
+  22   2          {
+  23   3            switch (userCommand[1])                             // Scan a command type
+  24   3            {
+  25   4              case '1':                               // Main page
+  26   4                changeScreen(MAIN_PAGE);                      // Stay in main page if main button is pressed again
+  27   4                setStandby();
+  28   4                break;
+  29   4              case '2':                               // Settings page
+  30   4                changeScreen(SETTINGS_PAGE);
+  31   4                break;
+  32   4              case '3':                                 // Service page
+  33   4                changeScreen(SERVICE_PAGE);
+  34   4                break;
+  35   4              case 'A':
+  36   4                // Call a function here or do something here      
+  37   4                break;
+  38   4              case 'B':
+  39   4                // Call a function here or do something here
+  40   4                break;
+  41   4              case 'C':
+  42   4                // Call a function here or do something here
+  43   4                break;  
+  44   4              default:                                // Other options
+  45   4                break;
+  46   4              }
+  47   3          }
+  48   2          else                                      // Not a command, empty buffer with null char
+  49   2          {
+  50   3            i = 0;
+  51   3            while(userCommand[i] != '\0')
+  52   3            {
+  53   4              userCommand[i] = '\0';
+C51 COMPILER V9.56.0.0   USER_INPUT_PROCESSING                                             11/07/2017 18:35:10 PAGE 2   
+
+  54   4              i++;
+  55   4            }
+  56   3          } 
+  57   2        }
+  58   1        else if(screen == SETTINGS_PAGE)                          // Settings page
+  59   1        {
+  60   2          if(userCommand[0] == '(')
+  61   2          {
+  62   3            switch (userCommand[1])
+  63   3            {
+  64   4              case '1':
+  65   4                changeScreen(MAIN_PAGE);
+  66   4                break;
+  67   4              case '2':
+  68   4                changeScreen(SETTINGS_PAGE);
+  69   4                break;
+  70   4              case '3':
+  71   4                changeScreen(SERVICE_PAGE);
+  72   4                break;
+  73   4              case 'A':
+  74   4                // Call a function here or do something here
+  75   4                break;
+  76   4              case 'B':
+  77   4                  // Call a function here or do something here
+  78   4                break;
+  79   4              case 'C':
+  80   4                  // Call a function here or do something here
+  81   4                break;
+  82   4              default:
+  83   4                break;
+  84   4            }
+  85   3          }
+  86   2          else                                      // Not a command, empty buffer with null
+  87   2          {
+  88   3            i = 0;
+  89   3            while(userCommand[i] != '\0')
+  90   3            {
+  91   4              userCommand[i] = '\0';
+  92   4              i++;
+  93   4            }
+  94   3          }       
+  95   2        }
+  96   1        else if(screen == SERVICE_PAGE)
+  97   1        {
+  98   2          if(userCommand[0] == '(')
+  99   2          {
+ 100   3            switch (userCommand[1])
+ 101   3            {
+ 102   4              case '1':
+ 103   4                changeScreen(MAIN_PAGE);
+ 104   4                break;
+ 105   4              case '2':
+ 106   4                changeScreen(SETTINGS_PAGE);
+ 107   4                break;
+ 108   4              case '3':
+ 109   4                changeScreen(SERVICE_PAGE);
+ 110   4                break;
+ 111   4              case 'A':
+ 112   4                // Call a function here or do something here
+ 113   4              case 'B':
+ 114   4                // Call a function here or do something here
+ 115   4              case 'C':
+C51 COMPILER V9.56.0.0   USER_INPUT_PROCESSING                                             11/07/2017 18:35:10 PAGE 3   
+
+ 116   4                // Call a function here or do something here
+ 117   4              default:
+ 118   4                break;
+ 119   4            }
+ 120   3          }
+ 121   2          else                                      // Not a command, empty buffer with null
+ 122   2          {                               
+ 123   3            i = 0;
+ 124   3            while(userCommand[i] != '\0')
+ 125   3            {
+ 126   4              userCommand[i] = '\0';
+ 127   4              i++;
+ 128   4            }
+ 129   3          }       
+ 130   2        } 
+ 131   1        else
+ 132   1        {
+ 133   2      
+ 134   2        }
+ 135   1      
+ 136   1        i = 0;
+ 137   1        while(userCommand[i] != '\0')
+ 138   1        {
+ 139   2          userCommand[i] = '\0';                              // Delete all contents in array
+ 140   2          i++;
+ 141   2        }
+ 142   1      }
+*** WARNING C280 IN LINE 16 OF ..\..\Google Drive\CMPE 240\Provided modules\user_input_processing.c: 'str': unreferenced
+             - local variable
+ 143          
+ 144          //-------------------------------------------------------------------------------------------------------
+ 145          // End Of File
+ 146          //------------------------------------------------------------------------------------------------------- 
+             -      
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    364    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----      66
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

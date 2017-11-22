@@ -1,0 +1,551 @@
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE I2C_SLAVE
+OBJECT MODULE PLACED IN .\Objects\i2c_slave.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\Google Drive\CMPE 240\Provided modules\i2c_slave.c LARGE OPTIMIZE(
+                    -8,SPEED) BROWSE MDU_F120 DEBUG OBJECTEXTEND PRINT(.\Listings\i2c_slave.lst) TABS(2) OBJECT(.\Objects\i2c_slave.obj)
+
+line level    source
+
+   1          #include <C8051F120.h>
+   2          #include <main.h>
+*** ERROR C231 IN LINE 16 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P0': redefinition
+*** ERROR C231 IN LINE 17 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SP': redefinition
+*** ERROR C231 IN LINE 18 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'DPL': redefinition
+*** ERROR C231 IN LINE 19 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'DPH': redefinition
+*** ERROR C231 IN LINE 20 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SFRPAGE': redefinition
+*** ERROR C231 IN LINE 21 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SFRNEXT': redefinition
+*** ERROR C231 IN LINE 22 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SFRLAST': redefinition
+*** ERROR C231 IN LINE 23 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCON': redefinition
+*** ERROR C231 IN LINE 24 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'FLSTAT': redefinition
+*** ERROR C231 IN LINE 25 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CPT0CN': redefinition
+*** ERROR C231 IN LINE 26 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CPT1CN': redefinition
+*** ERROR C231 IN LINE 27 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TCON': redefinition
+*** ERROR C231 IN LINE 28 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMOD': redefinition
+*** ERROR C231 IN LINE 29 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CPT0MD': redefinition
+*** ERROR C231 IN LINE 30 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CPT1MD': redefinition
+*** ERROR C231 IN LINE 31 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PLL0CN': redefinition
+*** ERROR C231 IN LINE 32 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'OSCICN': redefinition
+*** ERROR C231 IN LINE 33 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TL0': redefinition
+*** ERROR C231 IN LINE 34 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'OSCICL': redefinition
+*** ERROR C231 IN LINE 35 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TL1': redefinition
+*** ERROR C231 IN LINE 36 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'OSCXCN': redefinition
+*** ERROR C231 IN LINE 37 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TH0': redefinition
+*** ERROR C231 IN LINE 38 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TH1': redefinition
+*** ERROR C231 IN LINE 39 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PLL0DIV': redefinition
+*** ERROR C231 IN LINE 40 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CKCON': redefinition
+*** ERROR C231 IN LINE 41 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PLL0MUL': redefinition
+*** ERROR C231 IN LINE 42 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PSCTL': redefinition
+*** ERROR C231 IN LINE 43 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PLL0FLT': redefinition
+*** ERROR C231 IN LINE 44 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P1': redefinition
+*** ERROR C231 IN LINE 45 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SSTA0': redefinition
+*** ERROR C231 IN LINE 46 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0BL': redefinition
+*** ERROR C231 IN LINE 47 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0BH': redefinition
+*** ERROR C231 IN LINE 48 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0ACC0': redefinition
+*** ERROR C231 IN LINE 49 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0ACC1': redefinition
+*** ERROR C231 IN LINE 50 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0ACC2': redefinition
+*** ERROR C231 IN LINE 51 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SFRPGCN': redefinition
+*** ERROR C231 IN LINE 52 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0ACC3': redefinition
+*** ERROR C231 IN LINE 53 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0OVR': redefinition
+*** ERROR C231 IN LINE 54 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CLKSEL': redefinition
+*** ERROR C231 IN LINE 55 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SCON0': redefinition
+*** ERROR C231 IN LINE 56 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SCON1': redefinition
+*** ERROR C231 IN LINE 57 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SBUF0': redefinition
+*** ERROR C231 IN LINE 58 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SBUF1': redefinition
+*** ERROR C231 IN LINE 59 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SPI0CFG': redefinition
+*** ERROR C231 IN LINE 60 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCH0MA': redefinition
+*** ERROR C231 IN LINE 61 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SPI0DAT': redefinition
+*** ERROR C231 IN LINE 62 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P4MDOUT': redefinition
+*** ERROR C231 IN LINE 63 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P5MDOUT': redefinition
+*** ERROR C231 IN LINE 64 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SPI0CKR': redefinition
+*** ERROR C231 IN LINE 65 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P6MDOUT': redefinition
+*** ERROR C231 IN LINE 66 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P7MDOUT': redefinition
+*** ERROR C231 IN LINE 67 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P2': redefinition
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 2   
+
+*** ERROR C231 IN LINE 68 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EMI0TC': redefinition
+*** ERROR C231 IN LINE 69 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCH0CN': redefinition
+*** ERROR C231 IN LINE 70 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EMI0CN': redefinition
+*** ERROR C231 IN LINE 71 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCH0TN': redefinition
+*** ERROR C231 IN LINE 72 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EMI0CF': redefinition
+*** ERROR C231 IN LINE 73 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCH0LC': redefinition
+*** ERROR C231 IN LINE 74 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P0MDOUT': redefinition
+*** ERROR C231 IN LINE 75 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P1MDOUT': redefinition
+*** ERROR C231 IN LINE 76 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P2MDOUT': redefinition
+*** ERROR C231 IN LINE 77 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P3MDOUT': redefinition
+*** ERROR C231 IN LINE 78 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'IE': redefinition
+*** ERROR C231 IN LINE 79 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SADDR0': redefinition
+*** ERROR C231 IN LINE 80 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P1MDIN': redefinition
+*** ERROR C231 IN LINE 81 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P3': redefinition
+*** ERROR C231 IN LINE 82 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PSBANK': redefinition
+*** ERROR C231 IN LINE 83 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'FLACL': redefinition
+*** ERROR C231 IN LINE 84 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'FLSCL': redefinition
+*** ERROR C231 IN LINE 85 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'IP': redefinition
+*** ERROR C231 IN LINE 86 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SADEN0': redefinition
+*** ERROR C231 IN LINE 87 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AMX0CF': redefinition
+*** ERROR C231 IN LINE 88 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AMX2CF': redefinition
+*** ERROR C231 IN LINE 89 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AMX0SL': redefinition
+*** ERROR C231 IN LINE 90 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AMX2SL': redefinition
+*** ERROR C231 IN LINE 91 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC0CF': redefinition
+*** ERROR C231 IN LINE 92 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC2CF': redefinition
+*** ERROR C231 IN LINE 93 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC0L': redefinition
+*** ERROR C231 IN LINE 94 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC2': redefinition
+*** ERROR C231 IN LINE 95 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC0H': redefinition
+*** ERROR C231 IN LINE 96 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0STA': redefinition
+*** ERROR C231 IN LINE 97 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SMB0CN': redefinition
+*** ERROR C231 IN LINE 98 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0AL': redefinition
+*** ERROR C231 IN LINE 99 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SMB0STA': redefinition
+*** ERROR C231 IN LINE 100 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0AH': redefinition
+*** ERROR C231 IN LINE 101 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SMB0DAT': redefinition
+*** ERROR C231 IN LINE 102 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0CF': redefinition
+*** ERROR C231 IN LINE 103 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SMB0ADR': redefinition
+*** ERROR C231 IN LINE 104 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC0GTL': redefinition
+*** ERROR C231 IN LINE 105 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC2GT': redefinition
+*** ERROR C231 IN LINE 106 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC0GTH': redefinition
+*** ERROR C231 IN LINE 107 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC0LTL': redefinition
+*** ERROR C231 IN LINE 108 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC2LT': redefinition
+*** ERROR C231 IN LINE 109 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC0LTH': redefinition
+*** ERROR C231 IN LINE 110 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P4': redefinition
+*** ERROR C231 IN LINE 111 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR2CN': redefinition
+*** ERROR C231 IN LINE 112 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR3CN': redefinition
+*** ERROR C231 IN LINE 113 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR4CN': redefinition
+*** ERROR C231 IN LINE 114 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR2CF': redefinition
+*** ERROR C231 IN LINE 115 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR3CF': redefinition
+*** ERROR C231 IN LINE 116 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR4CF': redefinition
+*** ERROR C231 IN LINE 117 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RCAP2L': redefinition
+*** ERROR C231 IN LINE 118 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RCAP3L': redefinition
+*** ERROR C231 IN LINE 119 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RCAP4L': redefinition
+*** ERROR C231 IN LINE 120 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RCAP2H': redefinition
+*** ERROR C231 IN LINE 121 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RCAP3H': redefinition
+*** ERROR C231 IN LINE 122 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RCAP4H': redefinition
+*** ERROR C231 IN LINE 123 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR2L': redefinition
+*** ERROR C231 IN LINE 124 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR3L': redefinition
+*** ERROR C231 IN LINE 125 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR4L': redefinition
+*** ERROR C231 IN LINE 126 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR2H': redefinition
+*** ERROR C231 IN LINE 127 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR3H': redefinition
+*** ERROR C231 IN LINE 128 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TMR4H': redefinition
+*** ERROR C231 IN LINE 129 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0RNDL': redefinition
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 3   
+
+*** ERROR C231 IN LINE 130 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0RNDH': redefinition
+*** ERROR C231 IN LINE 131 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SMB0CR': redefinition
+*** ERROR C231 IN LINE 132 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PSW': redefinition
+*** ERROR C231 IN LINE 133 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'REF0CN': redefinition
+*** ERROR C231 IN LINE 134 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'DAC0L': redefinition
+*** ERROR C231 IN LINE 135 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'DAC1L': redefinition
+*** ERROR C231 IN LINE 136 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'DAC0H': redefinition
+*** ERROR C231 IN LINE 137 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'DAC1H': redefinition
+*** ERROR C231 IN LINE 138 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'DAC0CN': redefinition
+*** ERROR C231 IN LINE 139 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'DAC1CN': redefinition
+*** ERROR C231 IN LINE 140 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P5': redefinition
+*** ERROR C231 IN LINE 141 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CN': redefinition
+*** ERROR C231 IN LINE 142 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0MD': redefinition
+*** ERROR C231 IN LINE 143 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPM0': redefinition
+*** ERROR C231 IN LINE 144 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPM1': redefinition
+*** ERROR C231 IN LINE 145 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPM2': redefinition
+*** ERROR C231 IN LINE 146 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPM3': redefinition
+*** ERROR C231 IN LINE 147 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPM4': redefinition
+*** ERROR C231 IN LINE 148 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPM5': redefinition
+*** ERROR C231 IN LINE 149 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ACC': redefinition
+*** ERROR C231 IN LINE 150 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'XBR0': redefinition
+*** ERROR C231 IN LINE 151 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPL5': redefinition
+*** ERROR C231 IN LINE 152 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPH5': redefinition
+*** ERROR C231 IN LINE 153 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'XBR1': redefinition
+*** ERROR C231 IN LINE 154 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'XBR2': redefinition
+*** ERROR C231 IN LINE 155 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EIE1': redefinition
+*** ERROR C231 IN LINE 156 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EIE2': redefinition
+*** ERROR C231 IN LINE 157 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC0CN': redefinition
+*** ERROR C231 IN LINE 158 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ADC2CN': redefinition
+*** ERROR C231 IN LINE 159 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P6': redefinition
+*** ERROR C231 IN LINE 160 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPL2': redefinition
+*** ERROR C231 IN LINE 161 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPH2': redefinition
+*** ERROR C231 IN LINE 162 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPL3': redefinition
+*** ERROR C231 IN LINE 163 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPH3': redefinition
+*** ERROR C231 IN LINE 164 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPL4': redefinition
+*** ERROR C231 IN LINE 165 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPH4': redefinition
+*** ERROR C231 IN LINE 166 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RSTSRC': redefinition
+*** ERROR C231 IN LINE 167 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'B': redefinition
+*** ERROR C231 IN LINE 168 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EIP1': redefinition
+*** ERROR C231 IN LINE 169 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EIP2': redefinition
+*** ERROR C231 IN LINE 170 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P7': redefinition
+*** ERROR C231 IN LINE 171 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SPI0CN': redefinition
+*** ERROR C231 IN LINE 172 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0L': redefinition
+*** ERROR C231 IN LINE 173 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0H': redefinition
+*** ERROR C231 IN LINE 174 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPL0': redefinition
+*** ERROR C231 IN LINE 175 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPH0': redefinition
+*** ERROR C231 IN LINE 176 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPL1': redefinition
+*** ERROR C231 IN LINE 177 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PCA0CPH1': redefinition
+*** ERROR C231 IN LINE 178 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'WDTCN': redefinition
+*** ERROR C231 IN LINE 184 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TF1': redefinition
+*** ERROR C231 IN LINE 185 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TR1': redefinition
+*** ERROR C231 IN LINE 186 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TF0': redefinition
+*** ERROR C231 IN LINE 187 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TR0': redefinition
+*** ERROR C231 IN LINE 188 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'IE1': redefinition
+*** ERROR C231 IN LINE 189 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'IT1': redefinition
+*** ERROR C231 IN LINE 190 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'IE0': redefinition
+*** ERROR C231 IN LINE 191 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'IT0': redefinition
+*** ERROR C231 IN LINE 194 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP0EN': redefinition
+*** ERROR C231 IN LINE 195 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP0OUT': redefinition
+*** ERROR C231 IN LINE 196 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP0RIF': redefinition
+*** ERROR C231 IN LINE 197 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP0FIF': redefinition
+*** ERROR C231 IN LINE 198 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP0HYP1': redefinition
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 4   
+
+*** ERROR C231 IN LINE 199 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP0HYP0': redefinition
+*** ERROR C231 IN LINE 200 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP0HYN1': redefinition
+*** ERROR C231 IN LINE 201 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP0HYN0': redefinition
+*** ERROR C231 IN LINE 204 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP1EN': redefinition
+*** ERROR C231 IN LINE 205 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP1OUT': redefinition
+*** ERROR C231 IN LINE 206 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP1RIF': redefinition
+*** ERROR C231 IN LINE 207 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP1FIF': redefinition
+*** ERROR C231 IN LINE 208 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP1HYP1': redefinition
+*** ERROR C231 IN LINE 209 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP1HYP0': redefinition
+*** ERROR C231 IN LINE 210 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP1HYN1': redefinition
+*** ERROR C231 IN LINE 211 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CP1HYN0': redefinition
+*** ERROR C231 IN LINE 214 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'FLHBUSY': redefinition
+*** ERROR C231 IN LINE 217 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SM00': redefinition
+*** ERROR C231 IN LINE 218 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SM10': redefinition
+*** ERROR C231 IN LINE 219 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SM20': redefinition
+*** ERROR C231 IN LINE 220 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'REN0': redefinition
+*** ERROR C231 IN LINE 221 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TB80': redefinition
+*** ERROR C231 IN LINE 222 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RB80': redefinition
+*** ERROR C231 IN LINE 223 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TI0': redefinition
+*** ERROR C231 IN LINE 224 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RI0': redefinition
+*** ERROR C231 IN LINE 227 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'S1MODE': redefinition
+*** ERROR C231 IN LINE 228 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MCE1': redefinition
+*** ERROR C231 IN LINE 229 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'REN1': redefinition
+*** ERROR C231 IN LINE 230 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TB81': redefinition
+*** ERROR C231 IN LINE 231 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RB81': redefinition
+*** ERROR C231 IN LINE 232 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TI1': redefinition
+*** ERROR C231 IN LINE 233 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RI1': redefinition
+*** ERROR C231 IN LINE 236 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EA': redefinition
+*** ERROR C231 IN LINE 237 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ET2': redefinition
+*** ERROR C231 IN LINE 238 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ES0': redefinition
+*** ERROR C231 IN LINE 239 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ET1': redefinition
+*** ERROR C231 IN LINE 240 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EX1': redefinition
+*** ERROR C231 IN LINE 241 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ET0': redefinition
+*** ERROR C231 IN LINE 242 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EX0': redefinition
+*** ERROR C231 IN LINE 245 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PT2': redefinition
+*** ERROR C231 IN LINE 246 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PS': redefinition
+*** ERROR C231 IN LINE 247 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PT1': redefinition
+*** ERROR C231 IN LINE 248 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PX1': redefinition
+*** ERROR C231 IN LINE 249 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PT0': redefinition
+*** ERROR C231 IN LINE 250 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'PX0': redefinition
+*** ERROR C231 IN LINE 253 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'BUSY': redefinition
+*** ERROR C231 IN LINE 254 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'ENSMB': redefinition
+*** ERROR C231 IN LINE 255 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'STA': redefinition
+*** ERROR C231 IN LINE 256 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'STO': redefinition
+*** ERROR C231 IN LINE 257 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SI': redefinition
+*** ERROR C231 IN LINE 258 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AA': redefinition
+*** ERROR C231 IN LINE 259 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SMBFTE': redefinition
+*** ERROR C231 IN LINE 260 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SMBTOE': redefinition
+*** ERROR C231 IN LINE 263 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0HO': redefinition
+*** ERROR C231 IN LINE 264 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0Z': redefinition
+*** ERROR C231 IN LINE 265 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0SO': redefinition
+*** ERROR C231 IN LINE 266 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MAC0N': redefinition
+*** ERROR C231 IN LINE 269 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TF2': redefinition
+*** ERROR C231 IN LINE 270 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EXF2': redefinition
+*** ERROR C231 IN LINE 271 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EXEN2': redefinition
+*** ERROR C231 IN LINE 272 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TR2': redefinition
+*** ERROR C231 IN LINE 273 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CT2': redefinition
+*** ERROR C231 IN LINE 274 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CPRL2': redefinition
+*** ERROR C231 IN LINE 277 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TF3': redefinition
+*** ERROR C231 IN LINE 278 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EXF3': redefinition
+*** ERROR C231 IN LINE 279 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EXEN3': redefinition
+*** ERROR C231 IN LINE 280 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TR3': redefinition
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 5   
+
+*** ERROR C231 IN LINE 281 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CT3': redefinition
+*** ERROR C231 IN LINE 282 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CPRL3': redefinition
+*** ERROR C231 IN LINE 285 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TF4': redefinition
+*** ERROR C231 IN LINE 286 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EXF4': redefinition
+*** ERROR C231 IN LINE 287 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'EXEN4': redefinition
+*** ERROR C231 IN LINE 288 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TR4': redefinition
+*** ERROR C231 IN LINE 289 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CT4': redefinition
+*** ERROR C231 IN LINE 290 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CPRL4': redefinition
+*** ERROR C231 IN LINE 293 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CY': redefinition
+*** ERROR C231 IN LINE 294 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AC': redefinition
+*** ERROR C231 IN LINE 295 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'F0': redefinition
+*** ERROR C231 IN LINE 296 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RS1': redefinition
+*** ERROR C231 IN LINE 297 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RS0': redefinition
+*** ERROR C231 IN LINE 298 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'OV': redefinition
+*** ERROR C231 IN LINE 299 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'F1': redefinition
+*** ERROR C231 IN LINE 300 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'P': redefinition
+*** ERROR C231 IN LINE 303 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CF': redefinition
+*** ERROR C231 IN LINE 304 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CR': redefinition
+*** ERROR C231 IN LINE 305 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCF5': redefinition
+*** ERROR C231 IN LINE 306 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCF4': redefinition
+*** ERROR C231 IN LINE 307 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCF3': redefinition
+*** ERROR C231 IN LINE 308 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCF2': redefinition
+*** ERROR C231 IN LINE 309 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCF1': redefinition
+*** ERROR C231 IN LINE 310 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'CCF0': redefinition
+*** ERROR C231 IN LINE 313 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD0EN': redefinition
+*** ERROR C231 IN LINE 314 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD0TM': redefinition
+*** ERROR C231 IN LINE 315 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD0INT': redefinition
+*** ERROR C231 IN LINE 316 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD0BUSY': redefinition
+*** ERROR C231 IN LINE 317 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD0CM1': redefinition
+*** ERROR C231 IN LINE 318 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD0CM0': redefinition
+*** ERROR C231 IN LINE 319 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD0WINT': redefinition
+*** ERROR C231 IN LINE 320 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD0LJST': redefinition
+*** ERROR C231 IN LINE 323 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD2EN': redefinition
+*** ERROR C231 IN LINE 324 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD2TM': redefinition
+*** ERROR C231 IN LINE 325 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD2INT': redefinition
+*** ERROR C231 IN LINE 326 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD2BUSY': redefinition
+*** ERROR C231 IN LINE 327 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD2CM2': redefinition
+*** ERROR C231 IN LINE 328 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD2CM1': redefinition
+*** ERROR C231 IN LINE 329 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD2CM0': redefinition
+*** ERROR C231 IN LINE 330 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'AD2WINT': redefinition
+*** ERROR C231 IN LINE 333 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SPIF': redefinition
+*** ERROR C231 IN LINE 334 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'WCOL': redefinition
+*** ERROR C231 IN LINE 335 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'MODF': redefinition
+*** ERROR C231 IN LINE 336 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'RXOVRN': redefinition
+*** ERROR C231 IN LINE 337 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'NSSMD1': redefinition
+*** ERROR C231 IN LINE 338 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'NSSMD0': redefinition
+*** ERROR C231 IN LINE 339 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'TXBMT': redefinition
+*** ERROR C231 IN LINE 340 OF C:\Keil_v5\C51\Inc\Cygnal\c8051f120.h: 'SPIEN': redefinition
+   3          
+   4          #define  SMB_FREQUENCY            100000L                             // Clock rate 100 Khz                    
+             -              
+   5          #define  WRITE                    0x00                                // Write operation
+   6          #define  READ                     0x01                                // Read operation
+   7          
+   8          #define  MCU_SLAVE_ADDR           0x02                                // Slave address
+*** WARNING C317 IN LINE 8 OF ..\..\Google Drive\CMPE 240\Provided modules\i2c_slave.c: attempt to redefine macro 'MCU_S
+             -LAVE_ADDR'
+   9          #define  MY_ADDR                  0x20                                // Master address
+*** WARNING C317 IN LINE 9 OF ..\..\Google Drive\CMPE 240\Provided modules\i2c_slave.c: attempt to redefine macro 'MY_AD
+             -DR'
+  10                                                                          
+  11          #define  M_SMB_BUS_ERROR            0                                 // Bus error for all modes
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 6   
+
+  12          #define  M_SMB_START                1                                 // Master initiates a transter, STA signa
+             -l transmitted
+  13          #define  M_SMB_REPEAT_START           2                                 // Master repeats sending STA signal t
+             -o slave
+  14          #define  M_SMB_ADDR_W_TX_ACK_RX     3                                 // Master transmitted Slave address + W;
+             - and ACK received
+  15          #define  M_SMB_ADDR_W_TX_NACK_RX    4                                 // Master transmitted Slave address + W;
+             - and NACK received
+  16          #define  M_SMB_DATA_TX_ACK_RX         5                                 // Master transmitted data byte; and 
+             -ACK received
+  17          #define  M_SMB_DATA_TX_NACK_RX        6                                 // Master transmitted data byte; and 
+             -NACK received
+  18          #define  M_SMB_ARBITRATION_LOST       7                                 // Master arbitration lost
+  19          #define  M_SMB_ADDR_R_TX_ACK_RX       8                                 // Master transmitted Slave address +
+             - R; and ACK received
+  20          #define  M_SMB_ADDR_R_TX_NACK_RX      9                             // Master transmitted Slave address + R; an
+             -d NACK received
+  21          #define  M_SMB_DATA_RX_ACK_TX         10                                // Master received data byte; ACK trans
+             -mitted
+  22          #define  M_SMB_DATA_RX_NACK_TX        11                                  // Master received data byte; NACK t
+             -ransmitted
+  23          
+  24          #define  S_SMB_ADDR_W_RX_ACK_TX       12                              // Slave received its own address for writ
+             -e; ACK transmitted
+  25          #define  S_SMB_ADDR_W_TX_LOST     13                    // Slave arbitration lost; slave address + W received and ACK 
+             -sent
+  26          #define  S_SMB_ADDR_WG_RX_ACK_TX      14                                // General call address received: ACK t
+             -ransmitted
+  27          #define  S_SMB_GENERAL_CALL_LOST    15                    // Slave arbitration loast; general call received, ACK sent
+  28          #define  S_SMB_DATA_RX_ACK_TX     16                                // Slave received data byte; ACK transmitte
+             -d
+  29          #define  S_SMB_DATA_RX_NACK_TX        17                                // Slave received data byte; NACK trans
+             -mitted
+  30          #define  S_SMB_DATAG_RX_ACK_TX      18                                // Slave received data byte under general 
+             -call; ACK transmitted
+  31          #define  S_SMB_DATAG_RX_NACK_TX     19                                // Slave received data byte under general
+             - call; NACK transmitted
+  32          #define  S_SMB_STOP_REPEAT_START      20                              // Slave received STOP or REPEAT START
+  33          
+  34          #define  S_SMB_ADDR_R_RX_ACK_TX       21                              // Slave received its own address for read
+             -; ACK transmitted
+  35          #define  S_SMB_ADDR_R_RX_LOST     22                    // Slave received its own address for read; ACK transmitted
+  36          #define  S_SMB_DATA_TX_ACK_RX       23                                // Slave transmitted data byte; ACK rece
+             -ived
+  37          #define  S_SMB_DATA_TX_NACK_RX        24                                // Slave transmitted data byte; NACK re
+             -ceived
+  38          #define  S_SMB_LAST_TX_ACK_RX       25                                // Slave transmitted last data byte; ACK 
+             -received
+  39          #define  S_SMB_CLOCK_HI_TIMEOUT     26                                // SCL clock high timeout
+  40          
+  41          #define   SHARED_DATA_MAX       0x7F                  // Max number of devices connected to slave (127)
+  42          
+  43          //-------------------------------------------------------------------------------------------------------
+  44          // Global Declarations
+  45          //-------------------------------------------------------------------------------------------------------
+  46          bit SMB_BUSY = 0;                                                       // Set to claim the bus, clear to free
+  47          bit SMB_RW;                                                           // Software flag to indicate Read or Writ
+             -e
+  48          unsigned char sharedData[SHARED_DATA_MAX];                    // Shared data between master and slave board
+  49          unsigned char deviceAddr;                           // Address of device or starting address
+  50          unsigned char slaveAddr;                                                // Target SMBus slave address
+  51          unsigned char numBytesRD;
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 7   
+
+  52          unsigned char numBytesWR;
+  53          
+  54          //-------------------------------------------------------------------------------------------------------
+  55          // SMBus Initialization
+  56          //-------------------------------------------------------------------------------------------------------
+  57          void smbInit (void)
+  58          {
+  59   1        char SFRPAGE_SAVE = SFRPAGE;
+  60   1      
+  61   1          SFRPAGE = SMB0_PAGE;
+  62   1          SMB0CN = 0x07;                                                    // Assert Acknowledge low (AA bit = 1b);
+  63   1                                              // Enable SMBus Free timeout detect;
+  64   1                                              // Enable SCL low timeout detect
+  65   1          SMB0ADR = MY_ADDR;                                                // Set an address for this device when it
+             - is 
+  66   1                                              // in a slave mode.
+  67   1          SMB0CN |= 0x40;                                                   // Enable SMBus
+  68   1        
+  69   1        EIE1 |= 0x02;                               // Enable SMB                       
+  70   1        
+  71   1        SI = 0;                                   // Clear SMB pending flag
+  72   1          
+  73   1        SFRPAGE = SFRPAGE_SAVE;                                           // Restore SFR page detector
+  74   1      }
+  75          
+  76          //-------------------------------------------------------------------------------------------------------
+  77          // SMBus Interrupt Service Routine (ISR). R/W bit: 1 for Read, 0 for Write
+  78          //-------------------------------------------------------------------------------------------------------
+  79          void smbISR(void) interrupt INTERRUPT_SMB using 1
+  80          {
+  81   1         static unsigned char TxCounter;
+  82   1         static unsigned char RxCounter;
+  83   1      
+  84   1         switch (SMB0STA >> 3)                        // Check status of SMB bus
+  85   1         {
+  86   2      //-------------------------------------------------------------------------------------------------------
+  87   2      // Slave Receiver: Slave address is verified by hardware. If it matches, hardware will transmit ACK signal
+             - to master
+  88   2      // Slave address + WRITE received.  ACK transmitted from slave to master by hardware.
+  89   2      // Fall through.
+  90   2      //-------------------------------------------------------------------------------------------------------
+  91   2            case S_SMB_ADDR_W_RX_ACK_TX:
+  92   2      
+  93   2      //-------------------------------------------------------------------------------------------------------
+  94   2      // Slave Receiver: General call address received.  ACK transmitted from slave to master by hardware.
+  95   2      //-------------------------------------------------------------------------------------------------------
+  96   2            case S_SMB_ADDR_WG_RX_ACK_TX:
+  97   2               TxCounter = 0;                                             // Reinitialize the data counters
+  98   2               RxCounter = 0;                                         
+  99   2               break;
+ 100   2      
+ 101   2      //-------------------------------------------------------------------------------------------------------
+ 102   2      // Slave Receiver: Master puts data on bus. Data byte received by slave after addressed by general call ad
+             -dress + WRITE.
+ 103   2      // ACK transmitted from slave to master by hardware.  Fall through.
+ 104   2      //-------------------------------------------------------------------------------------------------------
+ 105   2            case S_SMB_DATAG_RX_ACK_TX:
+ 106   2      
+ 107   2      //-------------------------------------------------------------------------------------------------------
+ 108   2      // Slave Receiver: Data byte received after addressed by own slave address + WRITE.
+ 109   2      // ACK transmitted. Receive each byte from master.
+ 110   2      //-------------------------------------------------------------------------------------------------------
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 8   
+
+ 111   2            case S_SMB_DATA_RX_ACK_TX:
+ 112   2          if(RxCounter == 0)
+ 113   2          {
+ 114   3            deviceAddr = SMB0DAT;                   // Point to specific device on slave
+ 115   3            RxCounter++;                          // Increment counter
+ 116   3            AA = 1;                           // Tell master that data are received by slave
+ 117   3          }
+ 118   2          else if(RxCounter < BYTES_IN_MAX)               // First byte of data
+ 119   2              {
+ 120   3                  sharedData[deviceAddr + RxCounter - 1] = SMB0DAT;     // Store high byte
+ 121   3            RxCounter++;                        // Increment counter
+ 122   3                  AA = 1;                                                 // Tell master that data are received by
+             - slave
+ 123   3              }
+ 124   2              else                            
+ 125   2              {
+ 126   3                  sharedData[deviceAddr + RxCounter - 1] = SMB0DAT;     // Store high byte
+ 127   3                  AA = 1;                                                 // Tell master that data are received by
+             - slave
+ 128   3              }
+ 129   2              break;
+ 130   2      
+ 131   2      //-------------------------------------------------------------------------------------------------------
+ 132   2      // Slave Receiver: Data byte received while addressed as slave.
+ 133   2      // NACK transmitted. Should not occur since AA will not be cleared as slave.  Fall through to next state.
+ 134   2      //-------------------------------------------------------------------------------------------------------
+ 135   2            case S_SMB_DATA_RX_NACK_TX:
+ 136   2      
+ 137   2      //-------------------------------------------------------------------------------------------------------
+ 138   2      // Slave Receiver: Data byte received while addressed by general call. NACK transmitted.
+ 139   2      // Should not occur since AA will not be cleared as slave.
+ 140   2      //-------------------------------------------------------------------------------------------------------
+ 141   2            case S_SMB_DATAG_RX_NACK_TX:
+ 142   2              AA = 1;
+ 143   2              break;
+ 144   2      
+ 145   2      //-------------------------------------------------------------------------------------------------------
+ 146   2      // Slave Receiver: STOP or repeated START received while addressed as slave.
+ 147   2      //-------------------------------------------------------------------------------------------------------
+ 148   2            case S_SMB_STOP_REPEAT_START:
+ 149   2              break;
+ 150   2      
+ 151   2      //-------------------------------------------------------------------------------------------------------
+ 152   2      // Slave Transmitter: Own slave address + READ received.  ACK transmitted from slave to master by hardware
+             -.
+ 153   2      // Load SMB0DAT with data to be outputed.
+ 154   2      // If master wants to read, it will initiate a write operation first to store 1 byte address of device in 
+ 155   2      // deviceAddr variable. And then master initiates a write to get data. Therefore slave uses this address t
+             -o get 
+ 156   2      // data for master.
+ 157   2      //-------------------------------------------------------------------------------------------------------
+ 158   2            case S_SMB_ADDR_R_RX_ACK_TX:                    // deviceAddr contains address of device on slave
+ 159   2              SMB0DAT = sharedData[deviceAddr + TxCounter];         // Send high byte to master                       
+ 160   2              TxCounter++;
+ 161   2              break;
+ 162   2      
+ 163   2      //-------------------------------------------------------------------------------------------------------
+ 164   2      // Slave Transmitter: Data byte transmitted.  ACK received.
+ 165   2      // Send each requested byte to the master.
+ 166   2      //-------------------------------------------------------------------------------------------------------
+ 167   2            case S_SMB_DATA_TX_ACK_RX:
+ 168   2              if (TxCounter < BYTES_OUT_MAX)
+C51 COMPILER V9.56.0.0   I2C_SLAVE                                                         11/07/2017 18:36:28 PAGE 9   
+
+ 169   2              {
+ 170   3                 SMB0DAT = sharedData[deviceAddr + TxCounter];        // Send low byte at to master                 
+             -                                   
+ 171   3                 TxCounter++;
+ 172   3              }
+ 173   2              break;
+ 174   2      
+ 175   2      //-------------------------------------------------------------------------------------------------------
+ 176   2      // // Slave Transmitter: Data byte transmitted.  NACK received. Resend the previous byte.
+ 177   2      //-------------------------------------------------------------------------------------------------------
+ 178   2            case S_SMB_DATA_TX_NACK_RX:
+ 179   2              TxCounter--;                          // Go back previous byte to resend
+ 180   2              SMB0DAT = sharedData[deviceAddr + TxCounter];         // Send low byte to master    
+ 181   2              TxCounter++;
+ 182   2              break;
+ 183   2      
+ 184   2      //-------------------------------------------------------------------------------------------------------
+ 185   2      // // Slave Transmitter: Last data byte transmitted.  ACK received. No action necessary.
+ 186   2      //-------------------------------------------------------------------------------------------------------
+ 187   2            case S_SMB_LAST_TX_ACK_RX:
+ 188   2              break;
+ 189   2      
+ 190   2      //-------------------------------------------------------------------------------------------------------
+ 191   2      // // All other status codes invalid.  Reset communication.
+ 192   2      //-------------------------------------------------------------------------------------------------------
+ 193   2            default:
+ 194   2              break;
+ 195   2         }
+ 196   1      
+ 197   1         SI = 0;                                                          // Clear interrupt flag
+ 198   1      }
+ 199          
+ 200          //-------------------------------------------------------------------------------------------------------
+ 201          // End of file
+ 202          //-------------------------------------------------------------------------------------------------------
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  286 ERROR(S)

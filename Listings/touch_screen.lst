@@ -1,0 +1,77 @@
+C51 COMPILER V9.56.0.0   TOUCH_SCREEN                                                      11/07/2017 18:36:29 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE TOUCH_SCREEN
+OBJECT MODULE PLACED IN .\Objects\touch_screen.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\Google Drive\CMPE 240\Provided modules\touch_screen.c LARGE OPTIMI
+                    -ZE(8,SPEED) BROWSE MDU_F120 DEBUG OBJECTEXTEND PRINT(.\Listings\touch_screen.lst) TABS(2) OBJECT(.\Objects\touch_screen.
+                    -obj)
+
+line level    source
+
+   1          //-------------------------------------------------------------------------------------------------------
+   2          // Function Name: displayText
+   3          // Return Value: None 
+   4          // Parmeters: fg, bg, size, message, x, y
+   5          // Function Description: This function displays a text on the touch screen
+   6          //-------------------------------------------------------------------------------------------------------
+   7          void displayText(const char* fg, const char* bg, const unsigned char size, const char* message, const unsi
+             -gned int x, const unsigned int y)
+   8          {
+   9   1        char str[TS_BUFFER_SIZE];                         // String
+*** ERROR C202 IN LINE 9 OF ..\..\Google Drive\CMPE 240\Provided modules\touch_screen.c: 'TS_BUFFER_SIZE': undefined ide
+             -ntifier
+*** ERROR C136 IN LINE 9 OF ..\..\Google Drive\CMPE 240\Provided modules\touch_screen.c: invalid dimension size: [0]
+  10   1      
+  11   1        delay(5);                                 // Do not remove this delay
+  12   1          
+  13   1        sprintf(str, "S %s %s\r", fg, bg);                      // Set forground and background color
+  14   1        sendCommand(str);                           
+  15   1        sprintf(str, "f %s\r", Font[size]);                     // Set text font
+  16   1        sendCommand(str);                           
+  17   1        sprintf(str, "t \"%s\" %u %u\r", message, x, y);              // Display text
+  18   1        sendCommand(str);                           
+  19   1      }
+  20          
+  21          //-------------------------------------------------------------------------------------------------------
+  22          // Function Name: showBitmap
+  23          // Return Value: None 
+  24          // Parmeters: index, x, y (bitmap index and coordinates)
+  25          // Function Description: This function displays a bitmap image
+  26          //-------------------------------------------------------------------------------------------------------
+  27          void showBitmap(const unsigned int index, const unsigned int x, const unsigned int y)
+  28          {
+  29   1        char str[TS_BUFFER_SIZE];
+  30   1      
+  31   1        sprintf(str, "xi %u %u %u\r", index, x, y);                 // Bitmap index
+  32   1        sendCommand(str);
+  33   1      }
+  34          
+  35          //-------------------------------------------------------------------------------------------------------
+  36          // Function Name: changeScreen
+  37          // Return Value: None 
+  38          // Parmeters: screenIndex (macro number)
+  39          // Function Description: This function switches to the new screen
+  40          //-------------------------------------------------------------------------------------------------------
+  41          void changeScreen(const unsigned char screenIndex)
+  42          {
+  43   1        callMacro(screenIndex);                           // Change screen    
+  44   1      }
+  45          
+  46          //-------------------------------------------------------------------------------------------------------
+  47          // Function Name: callMacro
+  48          // Return Value: None 
+  49          // Parmeters: macroNumber (macro number in the macro file)
+C51 COMPILER V9.56.0.0   TOUCH_SCREEN                                                      11/07/2017 18:36:29 PAGE 2   
+
+  50          // Function Description: This function calls a macro
+  51          //-------------------------------------------------------------------------------------------------------
+  52          void callMacro(const unsigned int macroNumber)
+  53          {
+  54   1        char str[TS_BUFFER_SIZE];
+  55   1      
+  56   1        sprintf(str, "m %u\r", macroNumber);                    // Execute macro number
+  57   1        sendCommand(str);
+  58   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
